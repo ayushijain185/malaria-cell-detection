@@ -1,6 +1,6 @@
 import numpy as np
 import streamlit as st
-import cv2
+import cv2 as cv
 from keras.models import load_model
 
 
@@ -25,7 +25,7 @@ if submit:
 
         # Convert the file to an opencv image.
         file_bytes = np.asarray(bytearray(cell_image.read()), dtype=np.uint8)
-        opencv_image = cv2.imdecode(file_bytes, 1)
+        opencv_image = cv.imdecode(file_bytes, 1)
 
 
 
@@ -33,7 +33,7 @@ if submit:
         st.image(opencv_image, channels="BGR")
         st.write(opencv_image.shape)
         #Resizing the image
-        opencv_image = cv2.resize(opencv_image, (64,64))
+        opencv_image = cv.resize(opencv_image, (64,64))
         #Convert image to 4 Dimension
         opencv_image.shape = (1,64,64,3)
         #Make Prediction
