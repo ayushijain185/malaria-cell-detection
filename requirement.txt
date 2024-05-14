@@ -2,4 +2,4 @@ streamlit==0.71.0
 Keras
 numpy
 tensorflow
-opencv_python_headless==4.4.0.46
+cv2 (opencv_python_headless==4.4.0.46)
